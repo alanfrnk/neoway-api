@@ -1,0 +1,9 @@
+{
+	"error.document.number.not.provided": "Document number not provided.",
+	"error.type.not.provided": "Document type not provided.",
+    "error.already.exists.document.number": "Already exists a document with this number.",
+	"default.error.unknown": "Occurred an unknown error: ", 
+	"error.id.not.provided": "ID not provided.", 
+	"error.document.not.found": "Document not found.",
+    "default.success.message": "Operation successfully completed."
+}

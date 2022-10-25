@@ -1,0 +1,10 @@
+{
+	"error.document.number.not.provided": "Número do documento não fornecido.",
+	"error.type.not.provided": "Tipo de documento não fornecido.",
+	"error.already.exists.document.number": "Já existe um documento com esse número cadastrado.",
+	"default.error.unknown": "Ocorreu um erro desconhecido: ",
+	"error.id.not.provided": "ID não fornecido.",
+	"error.document.not.found": "Documento não encontrado.",
+	"error.document.not.provided": "Documento não fornecido.",
+	"default.success.message": "Operação realizada com sucesso."
+}
