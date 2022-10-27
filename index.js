@@ -1,6 +1,6 @@
 const app  = require('./app')
 const http = require('http').Server(app)
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 3333
 
 /** Init Server */
 setTimeout(() => {
