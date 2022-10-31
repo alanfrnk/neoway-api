@@ -40,34 +40,6 @@ app.use(cookieParser('platformneoway'))
 app.use(i18n.init)
 
 app.use(router)
-// app.use('/api/log', statusRoutes)
 app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile))
-
-const getRoute = (req) => {
-    const route = req.route ? req.route.path : ''
-    const baseUrl = req.baseUrl ? req.baseUrl : ''
-
-    return route ? `${baseUrl === '/' ? '' : baseUrl}${route}` : 'unknown route'
-}
-
-// dump json object to file
-const dumpStats = (stats) => {
-    try {
-        fs.writeFileSync(FILE_PATH, JSON.stringify(stats), { flag: 'w+' })
-        console.log(stats);
-    } catch (err) {
-        console.error(err)
-    }
-}
-
-app.use((req, res, next) => {
-    res.on('finish', () => {
-        const stats = readStats()
-        const event = `${req.method} ${getRoute(req)} ${res.statusCode}`
-        stats[event] = stats[event] ? stats[event] + 1 : 1
-        dumpStats(stats)
-    })
-    next()
-})
 
 module.exports = app

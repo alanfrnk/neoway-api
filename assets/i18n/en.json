@@ -5,5 +5,6 @@
 	"default.error.unknown": "Occurred an unknown error: ", 
 	"error.id.not.provided": "ID not provided.", 
 	"error.document.not.found": "Document not found.",
-    "default.success.message": "Operation successfully completed."
+    "default.success.message": "Operation successfully completed.",
+	"error.cpf.cnpj.not.valid": "Cpf or Cnpj is not valid"
 }

@@ -9,19 +9,19 @@ class DocumentService {
             const { error, isValid } = validateDocument.create(req.body);
 
             if (!isValid) {
-                return util.resultError400(res, error);
+                return util.resultError200(res, error);
             }
 
             const documents = await Document.find({ documentNumber: req.body.documentNumber });
 
             if (!_.isEmpty(documents)) {
-                return util.resultWarning400(
+                return util.resultError200(
                     res,
                     util.formatWarning('error.already.exists.document.number')
                 );
             }
 
-            const newDocument = await new Document(req.body).save();
+            const newDocument = new Document(req.body).save();
 
             return util.resultSuccess(res, newDocument);
         } catch (err) {
@@ -35,11 +35,11 @@ class DocumentService {
             const { error, isValid } = validateDocument.update(req.body)
 
             if (!isValid) {
-                return util.resultError400(res, error)
+                return util.resultError200(res, error)
             }
 
             if (!req.params.id) {
-                return util.resultError400(
+                return util.resultError200(
                     res,
                     util.formatError('error.id.not.provided')
                 )
@@ -76,15 +76,15 @@ class DocumentService {
                     {status: 'active'},
                 ]
             }
-            
+
             if (like) {
                 filter.$and.push({
                     $or: [
                         { documentNumber: { $regex: '.*' + like + '.*', $options: 'i' } },
                     ]
                 });
-            }            
-
+            }       
+            
             let documents = [];
             if (page && limit) {
                 documents = await Document.find(filter)

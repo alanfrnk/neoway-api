@@ -6,5 +6,6 @@
 	"error.id.not.provided": "ID não fornecido.",
 	"error.document.not.found": "Documento não encontrado.",
 	"error.document.not.provided": "Documento não fornecido.",
-	"default.success.message": "Operação realizada com sucesso."
+	"default.success.message": "Operação realizada com sucesso.",
+	"error.cpf.cnpj.not.valid": "Cpf ou Cnpj inválido"
 }

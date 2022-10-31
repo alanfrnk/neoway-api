@@ -44,6 +44,15 @@ Util.resultError400 = (res, error) => {
     return res.status(400).json(result)
 }
 
+Util.resultError200 = (res, error) => {
+    const result = {
+        success: false,
+        error,
+    }
+
+    return res.status(200).json(result)
+}
+
 Util.resultWarning400 = (res, error) => {
     const result = {
         success: false,

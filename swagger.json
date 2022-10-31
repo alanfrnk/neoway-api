@@ -101,6 +101,13 @@
         ],
         "responses": {}
       }
+    },
+    "/status/": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
     }
   }
 }
